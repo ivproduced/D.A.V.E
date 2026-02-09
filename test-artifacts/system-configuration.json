@@ -1,0 +1,208 @@
+{
+  "system_info": {
+    "name": "Patient Portal Web Application",
+    "system_id": "SYS-PHI-001",
+    "classification": "Confidential - PHI",
+    "owner": "Healthcare IT Operations",
+    "nist_impact_level": "moderate",
+    "baseline": "NIST 800-53 Rev 5 Moderate"
+  },
+  "network_configuration": {
+    "perimeter_firewall": {
+      "vendor": "Palo Alto Networks",
+      "model": "PA-5250",
+      "firmware": "10.2.4-h3",
+      "configured_rules": 247,
+      "default_deny": true,
+      "logging_enabled": true,
+      "intrusion_prevention": "enabled",
+      "compliance_controls": ["AC-4", "SC-7", "SI-4"]
+    },
+    "network_segments": [
+      {
+        "name": "DMZ",
+        "vlan": 10,
+        "subnet": "10.50.10.0/24",
+        "purpose": "Public-facing web servers",
+        "controls": ["SC-7(4)", "SC-7(5)"]
+      },
+      {
+        "name": "Application Tier",
+        "vlan": 20,
+        "subnet": "10.50.20.0/24",
+        "purpose": "Application servers with PHI access",
+        "isolation": "No direct internet access",
+        "controls": ["AC-4", "SC-7(3)"]
+      },
+      {
+        "name": "Database Tier",
+        "vlan": 30,
+        "subnet": "10.50.30.0/24",
+        "purpose": "Database servers with PHI storage",
+        "encryption_at_rest": "AES-256",
+        "controls": ["SC-8", "SC-13", "SC-28"]
+      }
+    ]
+  },
+  "access_control": {
+    "authentication": {
+      "primary": "Okta SSO",
+      "mfa_required": true,
+      "mfa_methods": ["Duo Push", "Hardware Token", "SMS"],
+      "password_policy": {
+        "min_length": 14,
+        "complexity_required": true,
+        "max_age_days": 90,
+        "history_count": 12,
+        "lockout_threshold": 5,
+        "lockout_duration_minutes": 30
+      },
+      "compliance_controls": ["IA-2", "IA-2(1)", "IA-5", "AC-7"]
+    },
+    "authorization": {
+      "model": "RBAC",
+      "roles": [
+        {
+          "name": "Patient",
+          "access_level": "read-own-records",
+          "session_timeout_minutes": 15
+        },
+        {
+          "name": "Nurse",
+          "access_level": "read-write-assigned-patients",
+          "session_timeout_minutes": 30
+        },
+        {
+          "name": "Physician",
+          "access_level": "read-write-all-patients",
+          "session_timeout_minutes": 30
+        },
+        {
+          "name": "System Admin",
+          "access_level": "full-administrative",
+          "session_timeout_minutes": 15,
+          "requires_approval": true,
+          "max_concurrent_sessions": 2
+        }
+      ],
+      "compliance_controls": ["AC-2", "AC-3", "AC-6"]
+    }
+  },
+  "audit_logging": {
+    "siem_system": "Splunk Enterprise",
+    "log_retention_days": 365,
+    "log_sources": [
+      "Application logs",
+      "Database audit logs",
+      "Firewall logs",
+      "VPN logs",
+      "Active Directory logs",
+      "AWS CloudTrail logs"
+    ],
+    "monitored_events": [
+      "Failed login attempts",
+      "Privilege escalation",
+      "PHI access",
+      "Configuration changes",
+      "Administrative actions",
+      "Data exports"
+    ],
+    "alerting": {
+      "enabled": true,
+      "notification_channels": ["email", "pagerduty", "slack"],
+      "critical_alerts": [
+        "Multiple failed login attempts",
+        "Unauthorized PHI access attempt",
+        "Firewall rule changes",
+        "Account creation/deletion"
+      ]
+    },
+    "compliance_controls": ["AU-2", "AU-3", "AU-6", "AU-9", "AU-12"]
+  },
+  "encryption": {
+    "data_in_transit": {
+      "protocol": "TLS 1.3",
+      "cipher_suites": [
+        "TLS_AES_256_GCM_SHA384",
+        "TLS_CHACHA20_POLY1305_SHA256"
+      ],
+      "certificate_authority": "DigiCert",
+      "certificate_expiry": "2026-12-31",
+      "compliance_controls": ["SC-8", "SC-13"]
+    },
+    "data_at_rest": {
+      "database_encryption": "Transparent Data Encryption (TDE)",
+      "algorithm": "AES-256",
+      "key_management": "AWS KMS",
+      "key_rotation_days": 90,
+      "backup_encryption": true,
+      "compliance_controls": ["SC-28", "SC-12", "SC-13"]
+    }
+  },
+  "backup_and_recovery": {
+    "backup_frequency": "Daily incremental, Weekly full",
+    "backup_retention_days": 30,
+    "backup_testing_frequency": "Quarterly",
+    "last_recovery_test": "2025-12-15",
+    "rto_hours": 4,
+    "rpo_hours": 24,
+    "offsite_backup": true,
+    "backup_encryption": true,
+    "compliance_controls": ["CP-9", "CP-10"]
+  },
+  "vulnerability_management": {
+    "scanner": "Tenable Nessus",
+    "scan_frequency": "Weekly",
+    "last_scan_date": "2026-02-01",
+    "critical_vulnerabilities": 0,
+    "high_vulnerabilities": 2,
+    "medium_vulnerabilities": 15,
+    "remediation_sla": {
+      "critical": "24 hours",
+      "high": "7 days",
+      "medium": "30 days"
+    },
+    "compliance_controls": ["RA-5", "SI-2"]
+  },
+  "patch_management": {
+    "os_patching": "Monthly",
+    "application_patching": "As released",
+    "emergency_patching_sla_hours": 48,
+    "testing_environment": "Staging",
+    "last_patched": "2026-01-15",
+    "patch_compliance_percentage": 98.5,
+    "compliance_controls": ["SI-2", "CM-3"]
+  },
+  "incident_response": {
+    "ir_plan_document": "IRP-001",
+    "ir_team_members": [
+      "security@healthcare.example",
+      "ciso@healthcare.example",
+      "it-ops@healthcare.example"
+    ],
+    "tabletop_exercise_frequency": "Semi-annually",
+    "last_exercise_date": "2025-10-20",
+    "breach_notification_time_hours": 72,
+    "compliance_controls": ["IR-1", "IR-4", "IR-5", "IR-6", "IR-8"]
+  },
+  "security_assessments": {
+    "penetration_test_frequency": "Annually",
+    "last_pentest_date": "2025-09-10",
+    "pentest_vendor": "TrustedSec",
+    "security_control_assessment_frequency": "Annually",
+    "last_assessment_date": "2025-11-05",
+    "compliance_controls": ["CA-2", "CA-8"]
+  },
+  "compliance_status": {
+    "frameworks": [
+      "NIST 800-53 Rev 5",
+      "HIPAA Security Rule",
+      "HITRUST CSF"
+    ],
+    "last_audit_date": "2025-11-30",
+    "next_audit_date": "2026-11-30",
+    "overall_compliance_score": 94.2,
+    "open_findings": 8,
+    "high_risk_findings": 1
+  }
+}

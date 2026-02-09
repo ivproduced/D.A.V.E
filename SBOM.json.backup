@@ -1,0 +1,367 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:f8a4c2d5-3b7e-4f9a-8c6d-2e1a9b4f5c3d",
+  "version": 2,
+  "metadata": {
+    "timestamp": "2026-02-05T12:00:00Z",
+    "component": {
+      "type": "application",
+      "bom-ref": "pkg:github/eucann/dave@0.1.0",
+      "name": "D.A.V.E",
+      "version": "0.1.0",
+      "description": "Document Analysis & Validation Engine - AI-Powered Compliance Automation using Google Gemini 2.0 Flash Experimental",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/fastapi@0.109.0",
+      "name": "fastapi",
+      "version": "0.109.0",
+      "description": "FastAPI framework for building APIs",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/fastapi@0.109.0"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/uvicorn@0.27.0",
+      "name": "uvicorn",
+      "version": "0.27.0",
+      "description": "ASGI server implementation",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/uvicorn@0.27.0"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/google-generativeai@0.3.2",
+      "name": "google-generativeai",
+      "version": "0.3.2",
+      "description": "Google Generative AI SDK for Gemini",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/google-generativeai@0.3.2"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/PyPDF2@3.0.1",
+      "name": "PyPDF2",
+      "version": "3.0.1",
+      "description": "PDF processing library",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/PyPDF2@3.0.1"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pdfplumber@0.10.3",
+      "name": "pdfplumber",
+      "version": "0.10.3",
+      "description": "Advanced PDF text extraction",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/pdfplumber@0.10.3"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/python-docx@1.1.0",
+      "name": "python-docx",
+      "version": "1.1.0",
+      "description": "Word document processing",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/python-docx@1.1.0"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/Pillow@10.2.0",
+      "name": "Pillow",
+      "version": "10.2.0",
+      "description": "Python Imaging Library",
+      "licenses": [
+        {
+          "license": {
+            "id": "HPND"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/Pillow@10.2.0"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/PyYAML@6.0.1",
+      "name": "PyYAML",
+      "version": "6.0.1",
+      "description": "YAML parser and emitter",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/PyYAML@6.0.1"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pydantic@2.5.3",
+      "name": "pydantic",
+      "version": "2.5.3",
+      "description": "Data validation using Python type hints",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/pydantic@2.5.3"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/psycopg2-binary@2.9.9",
+      "name": "psycopg2-binary",
+      "version": "2.9.9",
+      "description": "PostgreSQL database adapter",
+      "licenses": [
+        {
+          "license": {
+            "id": "LGPL-3.0"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/psycopg2-binary@2.9.9"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/redis@5.0.1",
+      "name": "redis",
+      "version": "5.0.1",
+      "description": "Redis client for Python",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/redis@5.0.1"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/react@18.2.0",
+      "name": "react",
+      "version": "18.2.0",
+      "description": "React library for building user interfaces",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/react@18.2.0"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/next@14.1.0",
+      "name": "next",
+      "version": "14.1.0",
+      "description": "The React Framework for Production",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/next@14.1.0"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/typescript@5.3.3",
+      "name": "typescript",
+      "version": "5.3.3",
+      "description": "TypeScript language",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/typescript@5.3.3"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/tailwindcss@3.4.1",
+      "name": "tailwindcss",
+      "version": "3.4.1",
+      "description": "Utility-first CSS framework",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/tailwindcss@3.4.1"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/react-dropzone@14.2.3",
+      "name": "react-dropzone",
+      "version": "14.2.3",
+      "description": "Simple drag-and-drop file upload",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/react-dropzone@14.2.3"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/d3@7.8.5",
+      "name": "d3",
+      "version": "7.8.5",
+      "description": "Data visualization library",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/d3@7.8.5"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/axios@1.6.5",
+      "name": "axios",
+      "version": "1.6.5",
+      "description": "Promise-based HTTP client",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/axios@1.6.5"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/lucide-react@0.316.0",
+      "name": "lucide-react",
+      "version": "0.316.0",
+      "description": "Beautiful icon library",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/lucide-react@0.316.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:generic/dave@0.1.0",
+      "dependsOn": [
+        "pkg:generic/dave-backend@0.1.0",
+        "pkg:generic/dave-frontend@0.1.0"
+      ]
+    },
+    {
+      "ref": "pkg:generic/dave-backend@0.1.0",
+      "dependsOn": [
+        "pkg:pypi/fastapi@0.109.0",
+        "pkg:pypi/uvicorn@0.27.0",
+        "pkg:pypi/google-generativeai@0.3.2",
+        "pkg:pypi/PyPDF2@3.0.1",
+        "pkg:pypi/pdfplumber@0.10.3",
+        "pkg:pypi/python-docx@1.1.0",
+        "pkg:pypi/Pillow@10.2.0",
+        "pkg:pypi/PyYAML@6.0.1",
+        "pkg:pypi/pydantic@2.5.3",
+        "pkg:pypi/psycopg2-binary@2.9.9",
+        "pkg:pypi/redis@5.0.1"
+      ]
+    },
+    {
+      "ref": "pkg:generic/dave-frontend@0.1.0",
+      "dependsOn": [
+        "pkg:npm/react@18.2.0",
+        "pkg:npm/next@14.1.0",
+        "pkg:npm/typescript@5.3.3",
+        "pkg:npm/tailwindcss@3.4.1",
+        "pkg:npm/react-dropzone@14.2.3",
+        "pkg:npm/d3@7.8.5",
+        "pkg:npm/axios@1.6.5",
+        "pkg:npm/lucide-react@0.316.0"
+      ]
+    }
+  ],
+  "vulnerabilities": [],
+  "properties": [
+    {
+      "name": "Purpose",
+      "value": "AI-Powered Compliance Automation"
+    },
+    {
+      "name": "AI Model",
+      "value": "Google Gemini 3"
+    },
+    {
+      "name": "Target Framework",
+      "value": "NIST 800-53"
+    },
+    {
+      "name": "Output Format",
+      "value": "OSCAL 1.2.0"
+    }
+  ]
+}

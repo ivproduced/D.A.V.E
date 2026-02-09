@@ -1,0 +1,129 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:f8a4c2d5-3b7e-4f9a-8c6d-2e1a9b4f5c3d",
+  "version": 2,
+  "metadata": {
+    "timestamp": "2026-02-05T12:00:00Z",
+    "component": {
+      "type": "application",
+      "bom-ref": "pkg:github/eucann/dave@0.1.0",
+      "name": "D.A.V.E",
+      "version": "0.1.0",
+      "description": "Document Analysis & Validation Engine - AI-Powered Compliance Automation using Google Gemini 2.0 Flash Experimental",
+      "licenses": [{"license": {"id": "MIT"}}]
+    }
+  },
+  "components": [
+    {"type": "library", "bom-ref": "pkg:pypi/fastapi@0.115.6", "name": "fastapi", "version": "0.115.6", "description": "FastAPI framework", "licenses": [{"license": {"id": "MIT"}}], "purl": "pkg:pypi/fastapi@0.115.6"},
+    {"type": "library", "bom-ref": "pkg:pypi/uvicorn@0.34.0", "name": "uvicorn", "version": "0.34.0", "description": "ASGI server", "licenses": [{"license": {"id": "BSD-3-Clause"}}],{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialom-r  "specVersion": "1.5",
+  ip  "serialNumber": "urnpy  "version": 2,
+  "metadata": {
+    "timestamp": "2026-02-05T12:0or  "metadata": ce    "timestampns    "component": {
+      "type": "applig:      "type": "appa      "bom-ref": "pkg:githuli      "name": "D.A.V.E",
+      "version": "0.1."n      "version": "0.1.0rs      "description": "Doon      "licenses": [{"license": {"id": "MIT"}}]
+    }
+  },
+  "components": [
+    {"type": "library", "bom-ref": "pkg:pypi/fastapi@0.115.6",om    }
+  },
+  "components": [
+    {"type": "li"n  },:   "og    {"type": "li,     {"type": "library", "bom-ref": "pkg:pypi/uvicorn@0.34.0", "name": "uvicorn", "version": "0.34.0", "description": "ASGI server", "licenses": [{"license": {"id": "BSD-3-Clause"}}],{
+  "bomFormat": "CycloneDX",
+  "sp":  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialom-r  "specVersion": "1.5",
+  ip  "serialNumber": "urnpy  "version": 2,
+  "metadata": {
+    "timestamp": "2026-0m-ref": "pk  "specVersion": "1.5",
+   "  "serialom-r  "specVeve  ip  "serialNumber": "urnpy  "versDF  "metadata": {
+    "timestamp": "2026-02-:     "timestamp],      "type": "applidfplumber@0.11.5"},
+    {"type": "library", "bom-ref": "pkg:pypi/p      "version": "0.1."n      "version": "0.1.0rs      "description": "Doon      "licenses": ",    }
+  },
+  "components": [
+    {"type": "library", "bom-ref": "pkg:pypi/fastapi@0.115.6",om    }
+  },
+  "components": g:  },/P  "ow    {"type": "li:   },
+  "components": [
+    {"type": "li"n  },:   "og    {"type": "lins  ":     {"type": "lid"  "bomFormat": "CycloneDX",
+  "sp":  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialom-r  "specVersion": "1.5",
+  ip  "serialNumber": "urnpy  "version": 2,
+  "metadata": {
+    "timestamp": "2026-0m-ref": "pk  "specVerg:  "sp":  "bomFormat": "Cyc"t  "specVersion": "1.5",
+  "serialpy  "serialom-r  "specVena  ip  "serialNumber": "urnpy  "vers",  "metadata": {
+    "timestamp": "2026-0m-es    "timestamp:    "  "serialom-r  "specVeve  ip  "serialNumber": "urnpy  {    "timestamp": "2026-02-:     "timestamp],      "type": "applidfplumber@0.11.nt    {"type": "library", "bom-ref": "pkg:pypi/p      "version": "0.1."n      "versi:   },
+  "components": [
+    {"type": "library", "bom-ref": "pkg:pypi/fastapi@0.115.6",om    }
+  },
+  "components": g:  },/P  "ow    {"type": "li: me  ""p    {"type": "live  },
+  "components": g:  },/P  "ow    {"type": "li:   },
+  "componenic  "e"  "components": [
+    {"type": "li"n  },:   "og   on    {"type": "li
+   "sp":  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialom-r  "specVersion": "1.5",
+"v  "specVersion": "1.5",
+  "serial "  "serialom-r  "sr", "li  ip  "serialNumber": "urnpy  "vers3.  "metadata": {
+    "timestamp": "2026-0m--b    "timestamp,
+  "serialpy  "serialom-r  "specVena  ip  "serialNumber": "urnpy  "vers",  "metadata": {
+    "timede    "timestamp": "2026-0m-es    "timestamp:    "  "serialom-r  "specVeve  ip  "serialNi/  "components": [
+    {"type": "library", "bom-ref": "pkg:pypi/fastapi@0.115.6",om    }
+  },
+  "components": g:  },/P  "ow    {"type": "li: me  ""p    {"type": "live  },
+  "components": g:  },/P  "ow    {"type": "li:   },
+  "componenic  "e"  "components": [
+    {"type": yp    {"type": "li "  },
+  "components": g:  },/P  "ow    {"type": "li: me  ""p    {"typicenses  "components": g:  },/P  "ow    {"type": "li:   },
+  "componenic  "e"  "co
+   "componenic  "e"  "components": [
+    {"type": "es    {"type": "li"n  },:   "og   onsi   "sp":  "bomFormat": "CycloneDX",
+  "specVersioli  "specVersion": "1.5",
+  "serialohe  "serialom-r  "specVe:p"v  "specVersion": "1.5",
+  "serial "  "serial "  "serialom-rg:    "timestamp": "2026-0m--b    "timestamp,
+  "serialpy  "serialom-r  "specVena  ip  "SE  "serialpy  "serialom-r  "specVena  ip  "T"    "timede    "timestamp": "2026-0m-es    "timestamp:    "  "serialom-r  "specVeve  ipi    {"type": "library", "bom-ref": "pkg:pypi/fastapi@0.115.6",om    }
+  },
+  "components": g:  },/P  "ow    {"type" {  },
+  "components": g:  },/P  "ow    {"type": "li: me  ""p    {"typpe  ""l  "components": g:  },/P  "ow    {"type": "li:   },
+  "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    {"type": y"l    {"type": yp    {"type": "li "  "  "components": g:  },/P  "ow    {"t {  "componenic  "e"  "co
+   "componenic  "e"  "components": [
+    {"type": "es    {"type": "li"n  },:   "og   onsi   "sp"me   "complicenses": [{"li    {"type": "es    {"type": "li"n kg  "specVersioli  "specVersion": "1.5",
+  "serialohe  "serialom-r  "specVe:p"v  "specVe.6  "serialohe  "serialom-r  "speersion":  "serial "  "serial "  "serialom-rg:    "timestamp": "2026-en  "serialpy  "serialom-r  "specVena  ip  "SE  "serialpy  "serialom-r  "specVenayp  },
+  "components": g:  },/P  "ow    {"type" {  },
+  "components": g:  },/P  "ow    {"type": "li: me  ""p    {"typpe  ""l  "components": g:  },/P  "ow    {"type": "li:   },
+  "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    {"typ-d  "19  "components": g:  },/P  "ow    {"type": "li4"  "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    {"type": y"l    {"type": yp    {"type": "li "  "  "comp:     {"type": y"l    {"type": yp    {"type": "li "  "  "comp,    "componenic  "e"  "components": [
+    {"type": "es    {"type": "li"n  },:   "og   onsi   "sp"me   "complicensm/    {"type": "es    {"type": "li"n y"  "serialohe  "serialom-r  "specVe:p"v  "specVe.6  "serialohe  "serialom-r  "speersion":  "serial "  "serial "  "serialom-rg:    "timestamp": "2026-en  "serial,   "components": g:  },/P  "ow    {"type" {  },
+  "components": g:  },/P  "ow    {"type": "li: me  ""p    {"typpe  ""l  "components": g:  },/P  "ow    {"type": "li:   },
+  "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    pm  "components": g:  },/P  "ow    {"type": "li,   "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    {"typ-d  "19  "components": g:  },/P  "ow    {"type": " "    {"typ-d  "19  "components": g:  },/P  "ow    {"type": "ea    {"type": y"l    {"type": yp    {"type": "li "  "  "comp:     {"type": y"l    {"type": yp    {"type": "li "  "  "comp, n"    {"type": "es    {"type": "li"n  },:   "og   onsi   "sp"me   "complicensm/    {"type": "es    {"type": "li"n y"  "serialohe  "serialom-r  "specVe:p"v  "spme  "components": g:  },/P  "ow    {"type": "li: me  ""p    {"typpe  ""l  "components": g:  },/P  "ow    {"type": "li:   },
+  "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    pm  "components": g:  },/P  "ow    {"type": "li,   "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    {"typ-d  "19  "comp}]  "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    pm  "components": g:  },/P  "ow    {"type": "li,   "coms"    pm  "component0", "description": "Chart library", "licens    {"typ-d  "19  "components": g:  },/P  "ow    {"type": " "    {"typ-d  "19  "components": g:  },/P  "ow    {"m/  "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    pm  "components": g:  },/P  "ow    {"type": "li,   "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    {"typ-d  "19  "comp}]  "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    pm  "components": g:  },/P  "ow    {"type": "li,   "coms"    pm  "component0", "description": "Chart library", "licens    {"typ-d  "19  "components": g:  },/P  "ow    {"type": " "    {"typ-d  "19  "components": g:  },/P  "ow    {"m/  "componenic  "e"  "co.2  ""3    pm  "components": g:  },/P  "ow    {"type": "li,   "comce    {"typ-d  "19  "comp}]  "componenic  "e"  "co.2  "componenic     {"type": "library", "bom-ref": "pkg:npm/@types    pm  "components": g:  },/P  "ow    {"type": "li,   "coms"    pm  "component0", "ni    pm  "components": g:  },/P  "ow    {"type": "li,   "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    {"typ-d  "19  "comp}]  "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    pm  "components": g:  },/P  "ow    {"type": "li,   "coms"    pm  "component0", "description@t    {"typ-d  "19  "comp}]  "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    pm  "components": g:  ve    pm  "components": g:  },/P  "ow    {"type": "li,   "coms"    pm  "component0", " {    {"typ-d  "19  "comp}]  "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    pm  "components": g:  },/P  "ow    {"type": "li,   "coms"    pm  "component0", "description@t    {"typ-d  "19  "comp}]  "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    pm  "components": g:  ve    pm  "components": g:  },/P  "ow    {"type": "li,   "coms"    pm  "component0", " {    {"typ-d  "19  "comp}]  "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    pm  "components": g:  },/P  "ow    {"type": "li,   "coms"    pm  "component0", "description@t    {"typ-d  "19  "comp}]  "componenic  "e"  "co.2  "componenic  "e"  "co":    pm  "components": g:  },/P  "ow    {"type": "li,   "coms"    pm  "component0", "ch    pm  "components": g:  ve    pm  "components": g:  },/P  "ow    {"type": "li,   "coms"    pm  "component0", " {    {"typ-d  "19  "comp}]  "componenic  "e"  "co.2  "componenic  "e p    pm  "components": g:  },/P  "ow    {"type": "li,   "coms"    pm  "component0", "description@t    {"typ-d  "19  "comp}]  "componenic  "e"  "co.2  "componenic  "e"  "components": [
+    pm  "componip    pm  "components": g:  ve    pm  "components": g:  },/P  "ow    {"type": "li,   "coms"    pm  "component0", " {    {"typ-d  "19  "comp}]  "componenic  "e"  "co.2  "componenic  "e":    pm  "components": g:  },/P  "ow    {"type": "li,   "coms"    pm  "component0", "description@t    {"typ-d  "19  "comp}]  "componenic  "e"  "co.2  "componenic  "e"  "co":    pm  "components": g:   "    pm  "componip    pm  "components": g:  ve    pm  "components": g:  },/P  "ow    {"type": "li,   "coms"    pm  "component0", " {    {"typ-d  "19  "comp}]  "componenic  "e"  "co.2  "componenic  "e":    pm  "components": g:  },/P  "ow    {"type": "li,   "coms"    pm  "component0", "description@t    {"typ-d  "19  "comp}]  "componenic  "e"  "co.2  "componenic  "e"  "co":    pm  "components": g:   "    pm  "componip    pm  "components": g:  ve    pm  "components": g:  },/P  "ow    {"type": "li,   "coms"    pm  "component0", " {    {"typ-d  "19  "comp}]  "componenic  "e"  "co.2  "componenic  "e":    pm  "components": brary", "bom-ref": "pkg:generic/gcc@latest", "name": "gcc", "version": "latest", "description": "GNU Compiler", "licenses": [{"license": {"id": "GPL-3.0-or-later"}}], "purl": "pkg:generic/gcc@latest"},
+    {"type": "library", "bom-ref": "pkg:generic/postgresql-client@latest", "name": "postgresql-client", "version": "latest", "description": "PostgreSQL client", "licenses": [{"license": {"id": "PostgreSQL"}}], "purl": "pkg:generic/postgresql-client@latest"}
+  ],
+  "properties": [
+    {"name": "Purpose", "value": "AI-Powered Compliance Automation"},
+    {"name": "AI Model", "value": "Google Gemini 2.0 Flash Experimental"},
+    {"name": "Target Framework", "value": "NIST 800-53 Rev 5"},
+    {"name": "Output Format", "value": "OSCAL 1.2.0"}
+  ]
+}

@@ -1,0 +1,425 @@
+{
+  "bomFormat": "AIBOM",
+  "specVersion": "0.1-draft",
+  "serialNumber": "urn:uuid:a7f2e5c3-9b4d-4a1e-8f6c-2d3b7e9a1c4f",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-02-05T00:00:00Z",
+    "component": {
+      "type": "ai-application",
+      "bom-ref": "pkg:github/eucann/dave@0.1.0",
+      "name": "D.A.V.E",
+      "version": "0.1.0",
+      "description": "AI-Powered Compliance Automation using Multi-Agent Architecture",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "ai_risk_classification",
+          "value": "medium"
+        },
+        {
+          "name": "data_sensitivity",
+          "value": "high"
+        },
+        {
+          "name": "human_oversight",
+          "value": "required"
+        },
+        {
+          "name": "explainability_level",
+          "value": "high"
+        }
+      ]
+    }
+  },
+  "models": [
+    {
+      "bom-ref": "model:google/gemini-2.0-flash-exp",
+      "name": "Gemini 2.0 Flash Experimental",
+      "modelId": "gemini-2.0-flash-exp",
+      "provider": "Google AI",
+      "type": "large-language-model",
+      "architecture": "transformer",
+      "modalities": [
+        "text",
+        "image",
+        "document"
+      ],
+      "contextWindow": 1048576,
+      "trainingDataCutoff": "unknown",
+      "deployment": "cloud-hosted",
+      "apiVersion": "v1",
+      "sdkVersion": "0.8.3",
+      "sdkPackage": "google-generativeai",
+      "capabilities": [
+        "document-understanding",
+        "long-context-reasoning",
+        "structured-output",
+        "multi-document-correlation",
+        "vision-analysis"
+      ],
+      "limitations": [
+        "no-real-time-data",
+        "probabilistic-outputs",
+        "hallucination-risk",
+        "context-window-limits"
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Google AI Terms of Service"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "pricing_model",
+          "value": "pay-per-token"
+        },
+        {
+          "name": "input_token_cost_usd",
+          "value": "0.000001"
+        },
+        {
+          "name": "output_token_cost_usd",
+          "value": "0.000003"
+        }
+      ]
+    }
+  ],
+  "agents": [
+    {
+      "bom-ref": "agent:evidence-analyzer",
+      "name": "Evidence Analyzer",
+      "purpose": "Extract and categorize evidence from uploaded documents",
+      "modelRef": "model:google/gemini-2.0-flash-exp",
+      "temperature": 0.3,
+      "maxTokens": 8000,
+      "systemPromptLength": 500,
+      "inputFormats": [
+        "application/pdf",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "image/png",
+        "image/jpeg",
+        "text/yaml",
+        "application/json"
+      ],
+      "outputFormat": "application/json",
+      "reasoning": "iterative-analysis",
+      "confidenceScoring": true,
+      "humanReview": "recommended",
+      "accuracy": {
+        "quick_mode": 0.87,
+        "smart_mode": 0.94,
+        "deep_mode": 0.98
+      }
+    },
+    {
+      "bom-ref": "agent:control-mapper",
+      "name": "Control Mapper",
+      "purpose": "Map extracted evidence to NIST 800-53 Rev 5 controls",
+      "modelRef": "model:google/gemini-2.0-flash-exp",
+      "temperature": 0.2,
+      "maxTokens": 8000,
+      "systemPromptLength": 1200,
+      "inputFormats": [
+        "application/json"
+      ],
+      "outputFormat": "application/json",
+      "reasoning": "multi-step-analysis",
+      "confidenceScoring": true,
+      "humanReview": "required",
+      "knowledgeBase": "NIST 800-53 Rev 5 (1,191 controls)",
+      "accuracy": {
+        "quick_mode": 0.83,
+        "smart_mode": 0.91,
+        "deep_mode": 0.96
+      }
+    },
+    {
+      "bom-ref": "agent:oscal-generator",
+      "name": "OSCAL Generator",
+      "purpose": "Generate OSCAL 1.2.0 compliant JSON artifacts",
+      "modelRef": "model:google/gemini-2.0-flash-exp",
+      "temperature": 0.1,
+      "maxTokens": 2000,
+      "systemPromptLength": 2000,
+      "inputFormats": [
+        "application/json"
+      ],
+      "outputFormat": "application/json",
+      "reasoning": "schema-driven",
+      "schemaCompliance": "OSCAL 1.2.0",
+      "humanReview": "required",
+      "accuracy": {
+        "quick_mode": 0.95,
+        "smart_mode": 0.99,
+        "deep_mode": 0.995
+      }
+    },
+    {
+      "bom-ref": "agent:nist-validator",
+      "name": "NIST Validator",
+      "purpose": "Validate mappings against NIST 800-53 definitions",
+      "modelRef": "model:google/gemini-2.0-flash-exp",
+      "temperature": 0.2,
+      "maxTokens": 1000,
+      "systemPromptLength": 800,
+      "inputFormats": [
+        "application/json"
+      ],
+      "outputFormat": "application/json",
+      "reasoning": "compliance-checking",
+      "knowledgeBase": "NIST 800-53 Rev 5",
+      "humanReview": "recommended",
+      "accuracy": {
+        "quick_mode": 0.89,
+        "smart_mode": 0.95,
+        "deep_mode": 0.98
+      }
+    },
+    {
+      "bom-ref": "agent:remediation-planner",
+      "name": "Remediation Planner",
+      "purpose": "Generate actionable remediation plans for identified gaps",
+      "modelRef": "model:google/gemini-2.0-flash-exp",
+      "temperature": 0.4,
+      "maxTokens": 2000,
+      "systemPromptLength": 600,
+      "inputFormats": [
+        "application/json"
+      ],
+      "outputFormat": "application/json",
+      "reasoning": "solution-generation",
+      "humanReview": "required",
+      "accuracy": {
+        "quick_mode": 0.82,
+        "smart_mode": 0.88,
+        "deep_mode": 0.93
+      }
+    }
+  ],
+  "processingModes": [
+    {
+      "name": "quick",
+      "tokensPerControl": 200,
+      "processingTimeSeconds": 0.5,
+      "costPerControl": 0.0002,
+      "accuracyLevel": 0.85,
+      "useCase": "Initial scoping and high-level gap analysis"
+    },
+    {
+      "name": "smart",
+      "tokensPerControl": 1000,
+      "processingTimeSeconds": 1.5,
+      "costPerControl": 0.001,
+      "accuracyLevel": 0.93,
+      "useCase": "Most compliance assessments (recommended)",
+      "default": true
+    },
+    {
+      "name": "deep",
+      "tokensPerControl": 8000,
+      "processingTimeSeconds": 5.0,
+      "costPerControl": 0.008,
+      "accuracyLevel": 0.97,
+      "useCase": "FedRAMP, DoD compliance, formal audits"
+    }
+  ],
+  "datasets": [
+    {
+      "bom-ref": "dataset:nist-800-53-rev5",
+      "name": "NIST SP 800-53 Revision 5",
+      "type": "knowledge-base",
+      "source": "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final",
+      "version": "Rev 5",
+      "size": "1,191 controls",
+      "format": "structured-catalog",
+      "license": "public-domain",
+      "purpose": "Control definitions and requirements for mapping",
+      "updateFrequency": "as-published"
+    },
+    {
+      "bom-ref": "dataset:oscal-schemas",
+      "name": "OSCAL 1.2.0 Schemas",
+      "type": "validation-schema",
+      "source": "https://pages.nist.gov/OSCAL/",
+      "version": "1.2.0",
+      "format": "json-schema",
+      "license": "public-domain",
+      "purpose": "Output validation and compliance",
+      "updateFrequency": "as-published"
+    }
+  ],
+  "safetyMeasures": {
+    "inputValidation": [
+      "file-size-limits",
+      "file-type-restrictions",
+      "content-filtering",
+      "malware-scanning"
+    ],
+    "outputValidation": [
+      "schema-validation",
+      "cross-agent-consistency",
+      "confidence-thresholds",
+      "hallucination-detection"
+    ],
+    "monitoring": [
+      "token-usage-tracking",
+      "error-rate-monitoring",
+      "performance-tracking",
+      "cost-anomaly-detection"
+    ],
+    "rateLimiting": {
+      "requestsPerMinute": 60,
+      "automaticRetry": true,
+      "queueManagement": true
+    }
+  },
+  "governance": {
+    "humanOversight": {
+      "required": true,
+      "reviewPoints": [
+        "evidence-categorization",
+        "control-mapping-status",
+        "gap-severity-ratings",
+        "final-oscal-artifacts"
+      ]
+    },
+    "auditTrail": {
+      "enabled": true,
+      "includes": [
+        "timestamps",
+        "reasoning-chains",
+        "evidence-sources",
+        "confidence-scores",
+        "version-history"
+      ]
+    },
+    "biasMitigation": [
+      "multi-agent-validation",
+      "confidence-scoring",
+      "diverse-evidence-sources",
+      "human-review-loops"
+    ],
+    "dataPrivacy": {
+      "cloudProcessing": true,
+      "provider": "Google AI",
+      "dataRetention": "no-long-term-storage",
+      "localStorageOption": true,
+      "piiMasking": "optional"
+    }
+  },
+  "useCases": {
+    "intended": [
+      "NIST 800-53 compliance assessment automation",
+      "FedRAMP/CMMC gap analysis",
+      "OSCAL artifact generation",
+      "Evidence mapping and organization",
+      "Remediation planning"
+    ],
+    "inappropriate": [
+      "Fully automated compliance decisions without human review",
+      "Real-time security monitoring",
+      "Penetration testing",
+      "Legal interpretation",
+      "Final compliance determinations without expert validation"
+    ]
+  },
+  "applicableStandards": [
+    {
+      "name": "NIST 800-53 Rev 5",
+      "url": "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final",
+      "role": "primary-framework"
+    },
+    {
+      "name": "OSCAL 1.2.0",
+      "url": "https://pages.nist.gov/OSCAL/",
+      "role": "output-format"
+    },
+    {
+      "name": "FedRAMP",
+      "url": "https://www.fedramp.gov/",
+      "role": "supported-program"
+    },
+    {
+      "name": "CMMC 2.0",
+      "url": "https://www.acq.osd.mil/cmmc/",
+      "role": "supported-program"
+    }
+  ],
+  "costEstimates": {
+    "lowBaseline": {
+      "controls": 53,
+      "quickMode": 0.50,
+      "smartMode": 2.50,
+      "deepMode": 20.00,
+      "currency": "USD"
+    },
+    "moderateBaseline": {
+      "controls": 325,
+      "quickMode": 3.00,
+      "smartMode": 15.00,
+      "deepMode": 120.00,
+      "currency": "USD"
+    },
+    "highBaseline": {
+      "controls": 421,
+      "quickMode": 4.00,
+      "smartMode": 20.00,
+      "deepMode": 160.00,
+      "currency": "USD"
+    }
+  },
+  "performanceMetrics": {
+    "accuracy": {
+      "evidenceExtraction": {
+        "quick": 0.87,
+        "smart": 0.94,
+        "deep": 0.98
+      },
+      "controlMapping": {
+        "quick": 0.83,
+        "smart": 0.91,
+        "deep": 0.96
+      },
+      "gapIdentification": {
+        "quick": 0.79,
+        "smart": 0.89,
+        "deep": 0.94
+      }
+    },
+    "errorRates": {
+      "falsePositives": {
+        "quick": 0.12,
+        "smart": 0.06,
+        "deep": 0.03
+      },
+      "falseNegatives": {
+        "quick": 0.15,
+        "smart": 0.08,
+        "deep": 0.04
+      }
+    }
+  },
+  "versionHistory": [
+    {
+      "version": "0.1.0",
+      "date": "2026-02-05",
+      "model": "gemini-2.0-flash-exp",
+      "changes": "Initial implementation with 5-agent architecture",
+      "performance": "baseline"
+    }
+  ],
+  "contact": {
+    "aiEthics": "compliance@eucann.life",
+    "technicalSupport": "support@eucann.life",
+    "performanceReports": "ai-feedback@eucann.life"
+  }
+}

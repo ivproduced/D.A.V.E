@@ -1,0 +1,353 @@
+---
+# Firewall ACL Configuration - NIST 800-53 AC-4, SC-7 Compliance
+# System: Patient Portal Production Environment
+# Last Updated: 2026-02-01
+# Owner: Network Security Team
+
+firewall_rules:
+  - rule_id: 100
+    name: "Allow Internet to DMZ Web Servers - HTTPS"
+    source_zone: untrust
+    source_addresses:
+      - any
+    destination_zone: dmz
+    destination_addresses:
+      - web-server-pool
+    services:
+      - https
+    action: allow
+    logging: session-start
+    nist_controls:
+      - AC-4
+      - SC-7
+    justification: "Public access to patient portal required"
+    
+  - rule_id: 101
+    name: "Allow Internet to DMZ Web Servers - HTTP Redirect"
+    source_zone: untrust
+    source_addresses:
+      - any
+    destination_zone: dmz
+    destination_addresses:
+      - web-server-pool
+    services:
+      - http
+    action: allow
+    logging: session-start
+    nist_controls:
+      - AC-4
+      - SC-7
+    justification: "HTTP to HTTPS redirect for user convenience"
+    
+  - rule_id: 200
+    name: "Allow DMZ to App Tier - HTTPS API"
+    source_zone: dmz
+    source_addresses:
+      - web-server-pool
+    destination_zone: app-tier
+    destination_addresses:
+      - api-server-pool
+    services:
+      - custom-https-8443
+    action: allow
+    logging: session-start
+    nist_controls:
+      - AC-4
+      - SC-7(3)
+    justification: "Web servers communicate with application API"
+    
+  - rule_id: 201
+    name: "Allow App Tier to DB Tier - PostgreSQL"
+    source_zone: app-tier
+    source_addresses:
+      - api-server-pool
+    destination_zone: db-tier
+    destination_addresses:
+      - postgres-primary
+      - postgres-replica
+    services:
+      - postgresql-5432
+    action: allow
+    logging: session-end
+    nist_controls:
+      - AC-4
+      - SC-7(4)
+    justification: "Application servers access patient database"
+    connection_tracking: enabled
+    
+  - rule_id: 300
+    name: "Allow VPN Users to App Tier - RDP"
+    source_zone: vpn
+    source_addresses:
+      - vpn-user-pool
+    destination_zone: app-tier
+    destination_addresses:
+      - admin-jump-host
+    services:
+      - rdp
+    action: allow
+    logging: session-start
+    nist_controls:
+      - AC-17
+      - SC-7(5)
+    justification: "Administrators access jump host for system management"
+    require_mfa: true
+    
+  - rule_id: 301
+    name: "Allow Jump Host to DB Tier - PostgreSQL Admin"
+    source_zone: app-tier
+    source_addresses:
+      - admin-jump-host
+    destination_zone: db-tier
+    destination_addresses:
+      - postgres-primary
+    services:
+      - postgresql-5432
+    action: allow
+    logging: session-start
+    nist_controls:
+      - AC-6
+      - AC-4
+    justification: "DBA access to database for maintenance"
+    time_based_access:
+      allowed_hours: "0800-1800"
+      timezone: "America/New_York"
+    
+  - rule_id: 400
+    name: "Allow App Tier to SIEM - Syslog"
+    source_zone: app-tier
+    source_addresses:
+      - api-server-pool
+    destination_zone: security
+    destination_addresses:
+      - splunk-siem
+    services:
+      - syslog-514
+      - syslog-tls-6514
+    action: allow
+    logging: none
+    nist_controls:
+      - AU-4
+      - AU-9(2)
+    justification: "Forward logs to SIEM for monitoring"
+    
+  - rule_id: 401
+    name: "Allow DMZ to SIEM - Syslog"
+    source_zone: dmz
+    source_addresses:
+      - web-server-pool
+    destination_zone: security
+    destination_addresses:
+      - splunk-siem
+    services:
+      - syslog-514
+      - syslog-tls-6514
+    action: allow
+    logging: none
+    nist_controls:
+      - AU-4
+      - AU-9(2)
+    justification: "Forward logs to SIEM for monitoring"
+    
+  - rule_id: 500
+    name: "Allow App Tier to Internet - HTTPS Update"
+    source_zone: app-tier
+    source_addresses:
+      - api-server-pool
+    destination_zone: untrust
+    destination_addresses:
+      - any
+    services:
+      - https
+      - http
+    action: allow
+    logging: session-start
+    nist_controls:
+      - SI-2
+      - SC-7(8)
+    justification: "Application servers download security updates"
+    url_filtering: enabled
+    allowed_categories:
+      - software-updates
+      - security-patches
+    
+  - rule_id: 501
+    name: "Allow DB Tier to Backup Storage - NBU"
+    source_zone: db-tier
+    source_addresses:
+      - postgres-primary
+    destination_zone: backup
+    destination_addresses:
+      - netbackup-server
+    services:
+      - netbackup-1556
+    action: allow
+    logging: session-start
+    nist_controls:
+      - CP-9
+      - SC-8(1)
+    justification: "Database backup to NetBackup"
+    encryption_required: true
+    
+  - rule_id: 900
+    name: "Deny All Inter-Zone Traffic"
+    source_zone: any
+    source_addresses:
+      - any
+    destination_zone: any
+    destination_addresses:
+      - any
+    services:
+      - any
+    action: deny
+    logging: session-start
+    nist_controls:
+      - AC-4
+      - SC-7
+    justification: "Default deny rule for defense in depth"
+    
+network_zones:
+  - name: untrust
+    description: "Internet and untrusted networks"
+    security_level: 0
+    
+  - name: dmz
+    description: "Public-facing web servers"
+    security_level: 50
+    
+  - name: app-tier
+    description: "Application servers with PHI access"
+    security_level: 75
+    
+  - name: db-tier
+    description: "Database servers with PHI storage"
+    security_level: 90
+    
+  - name: vpn
+    description: "VPN users"
+    security_level: 60
+    
+  - name: security
+    description: "Security monitoring and logging systems"
+    security_level: 85
+    
+  - name: backup
+    description: "Backup and recovery infrastructure"
+    security_level: 85
+
+service_objects:
+  - name: https
+    protocol: tcp
+    port: 443
+    
+  - name: http
+    protocol: tcp
+    port: 80
+    
+  - name: custom-https-8443
+    protocol: tcp
+    port: 8443
+    
+  - name: postgresql-5432
+    protocol: tcp
+    port: 5432
+    
+  - name: rdp
+    protocol: tcp
+    port: 3389
+    
+  - name: syslog-514
+    protocol: udp
+    port: 514
+    
+  - name: syslog-tls-6514
+    protocol: tcp
+    port: 6514
+    
+  - name: netbackup-1556
+    protocol: tcp
+    port: 1556
+
+address_objects:
+  - name: web-server-pool
+    type: ip-netmask
+    value: 10.50.10.10-10.50.10.15
+    
+  - name: api-server-pool
+    type: ip-netmask
+    value: 10.50.20.10-10.50.20.15
+    
+  - name: postgres-primary
+    type: ip-netmask
+    value: 10.50.30.10/32
+    
+  - name: postgres-replica
+    type: ip-netmask
+    value: 10.50.30.11/32
+    
+  - name: admin-jump-host
+    type: ip-netmask
+    value: 10.50.20.5/32
+    
+  - name: splunk-siem
+    type: ip-netmask
+    value: 10.50.40.10/32
+    
+  - name: netbackup-server
+    type: ip-netmask
+    value: 10.50.50.10/32
+    
+  - name: vpn-user-pool
+    type: ip-range
+    value: 10.60.10.1-10.60.10.254
+
+compliance_mapping:
+  nist_800_53_controls:
+    - control_id: AC-4
+      enhancement: none
+      implementation: "Firewall rules enforce information flow control between network zones"
+      
+    - control_id: SC-7
+      enhancement: none
+      implementation: "Boundary protection via zone-based firewall architecture"
+      
+    - control_id: SC-7(3)
+      enhancement: Access Points
+      implementation: "Limited access points between DMZ and App Tier"
+      
+    - control_id: SC-7(4)
+      enhancement: External Telecommunications Services
+      implementation: "Managed interface for external connections via DMZ"
+      
+    - control_id: SC-7(5)
+      enhancement: Deny by Default / Allow by Exception
+      implementation: "Default deny rule (900) with explicit allow rules"
+      
+    - control_id: AC-17
+      enhancement: none
+      implementation: "VPN zone with MFA requirement for remote access"
+      
+    - control_id: AU-4
+      enhancement: none
+      implementation: "Syslog traffic allowed to SIEM for audit record storage"
+      
+    - control_id: SI-2
+      enhancement: none
+      implementation: "Allow outbound HTTPS for security update downloads"
+      
+    - control_id: CP-9
+      enhancement: none
+      implementation: "Allow database backup traffic to backup infrastructure"
+
+audit_trail:
+  - date: "2026-02-01"
+    changed_by: "jsmith@healthcare.example"
+    change_description: "Added rule 301 for time-based DBA access"
+    
+  - date: "2026-01-15"
+    changed_by: "mjohnson@healthcare.example"
+    change_description: "Updated web server pool addresses for new load balancer"
+    
+  - date: "2025-12-10"
+    changed_by: "awilliams@healthcare.example"
+    change_description: "Enabled URL filtering on rule 500"

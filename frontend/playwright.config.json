@@ -1,0 +1,5 @@
+{
+  "baseURL": "http://localhost:3000",
+  "testMatch": ["**/?(*.)+(e2e).[jt]s?(x)"],
+  "testTimeout": 30000
+}
