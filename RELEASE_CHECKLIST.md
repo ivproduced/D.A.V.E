@@ -71,7 +71,7 @@ Use this checklist before making the repository public.
 ## ✅ Repository Settings (GitHub)
 
 - [ ] Set repository to **Public**
-- [ ] Add repository description: "AI-powered NIST 800-53 compliance automation using Google Gemini 2.0"
+- [ ] Add repository description: "AI-powered NIST 800-53 compliance automation using Google Gemini 3 Pro"
 - [ ] Add topics/tags: `compliance`, `nist-800-53`, `gemini`, `oscal`, `security`, `ai`, `fastapi`, `nextjs`
 - [ ] Enable Discussions (for Q&A)
 - [ ] Set up Issue Templates:

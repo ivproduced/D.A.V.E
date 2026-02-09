@@ -10,7 +10,7 @@
 
 ## 📋 Executive Summary
 
-D.A.V.E is an AI-powered compliance automation system that leverages Google's Gemini 2.0 Flash Experimental model in a multi-agent architecture to analyze security documentation, map controls to NIST 800-53 Rev 5 standards, and generate OSCAL-compliant artifacts.
+D.A.V.E is an AI-powered compliance automation system that leverages Google's Gemini 3 Pro Preview model in a multi-agent architecture to analyze security documentation, map controls to NIST 800-53 Rev 5 standards, and generate OSCAL-compliant artifacts.
 
 **AI Risk Classification**: Medium  
 **Data Sensitivity**: High (processes sensitive compliance documentation)  
@@ -25,8 +25,8 @@ D.A.V.E is an AI-powered compliance automation system that leverages Google's Ge
 
 | Property | Value | Details |
 |----------|-------|---------|
-| **Model Name** | Gemini 2.0 Flash Experimental | Google's latest multimodal AI model |
-| **Model ID** | `gemini-2.0-flash-exp` | API identifier |
+| **Model Name** | Gemini 3 Pro Preview | Google's latest multimodal AI model |
+| **Model ID** | `gemini-3-pro-preview` | API identifier |
 | **Provider** | Google AI | Via Google Generative AI SDK |
 | **SDK Version** | 0.8.3 | Python client library |
 | **Model Type** | Large Language Model (LLM) | Multimodal (text, images, documents) |
@@ -412,8 +412,8 @@ All outputs include confidence scores:
 
 | Date | Model Version | Change | Impact |
 |------|---------------|--------|--------|
-| 2026-02-05 | gemini-2.0-flash-exp | Initial implementation | Baseline performance |
-| Future | gemini-2.0-flash (stable) | Production release | Expected accuracy improvement |
+| 2026-02-05 | gemini-3-pro-preview | Initial implementation | Baseline performance |
+| Future | gemini-3-pro (stable) | Production release | Expected accuracy improvement |
 | Future | gemini-2.5 | Next generation | TBD |
 
 ### Update Policy
@@ -527,7 +527,7 @@ All AI outputs include:
   "confidence": 0.94,
   "reasoning": "Evidence found in access control policy section 3.2...",
   "sources": ["policy.pdf:page12", "config.yaml:line45"],
-  "model_version": "gemini-2.0-flash-exp"
+  "model_version": "gemini-3-pro-preview"
 }
 ```
 
@@ -590,7 +590,7 @@ All AI outputs include:
 ### Model Documentation
 
 - [Google Gemini API Documentation](https://ai.google.dev/docs)
-- [Gemini 2.0 Model Card](https://ai.google.dev/gemini-api/docs/models)
+- [Gemini 3 Pro Model Card](https://ai.google.dev/gemini-api/docs/models)
 - [Google AI Safety Principles](https://ai.google/responsibility/principles/)
 
 ### Standards & Frameworks
@@ -615,7 +615,7 @@ All AI outputs include:
 **Model Performance Reports**: ai-feedback@eucann.life  
 
 **Version History:**
-- v0.1.0 (2026-02-05): Initial AIBOM release with Gemini 2.0 Flash Experimental
+- v0.1.0 (2026-02-05): Initial AIBOM release with Gemini 3 Pro Preview
 
 ---
 

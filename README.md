@@ -6,7 +6,7 @@
 [![Python](https://img.shields.io/badge/python-3.13%2B-blue.svg)](https://www.python.org/downloads/)
 [![Node](https://img.shields.io/badge/node-20%2B-green.svg)](https://nodejs.org/)
 
-🌟 **AI-Powered Compliance Automation using Google Gemini 2.0**
+🌟 **AI-Powered Compliance Automation using Google Gemini 3 Pro**
 
 D.A.V.E automates security compliance documentation by analyzing evidence artifacts, mapping controls to frameworks like NIST 800-53 Rev 5, and generating valid OSCAL artifacts—all powered by Google Gemini's multimodal AI capabilities with custom baseline creation and intelligent scope filtering.
 
@@ -34,7 +34,7 @@ D.A.V.E automates security compliance documentation by analyzing evidence artifa
 
 ## Architecture
 
-Built with a **5-agent architecture** powered by Google Gemini 2.0:
+Built with a **5-agent architecture** powered by Google Gemini 3 Pro Preview:
 
 1. **Agent 1 - Evidence Analyzer**: Multimodal extraction from documents, screenshots, and configs
 2. **Agent 2 - Control Mapper & Gap Analyzer**: NIST 800-53 mapping with cross-document correlation
@@ -52,7 +52,7 @@ Built with a **5-agent architecture** powered by Google Gemini 2.0:
 
 - **Backend**: FastAPI (Python 3.13+), Google Generative AI SDK
 - **Frontend**: Next.js 16, React 19, TypeScript, Tailwind CSS, shadcn/ui
-- **AI Model**: Google Gemini 2.0 Flash Experimental (multimodal reasoning)
+- **AI Model**: Google Gemini 3 Pro Preview (multimodal reasoning)
 - **Database**: PostgreSQL, Redis, Google Cloud Storage
 - **Real-time**: WebSocket for live processing updates
 
@@ -128,9 +128,9 @@ Visit `http://localhost:3000` to use the application.
 - **WebSocket Authentication**: Session validation before connection
 - **Environment Security**: API keys in .env (gitignored), CORS restricted
 
-## How We Use Gemini 2.0
+## How We Use Gemini 3 Pro
 
-D.A.V.E leverages Gemini 2.0's multimodal reasoning to automate compliance workflows. The model processes PDFs, screenshots, network diagrams, and configuration files simultaneously, understanding how technical evidence satisfies specific security controls through deep multi-hop inference.
+D.A.V.E leverages Gemini 3 Pro's multimodal reasoning to automate compliance workflows. The model processes PDFs, screenshots, network diagrams, and configuration files simultaneously, understanding how technical evidence satisfies specific security controls through deep multi-hop inference.
 
 **Key Capabilities:**
 - **Multi-document Correlation**: Combines policy documents, technical configs, and visual evidence to prove control implementation

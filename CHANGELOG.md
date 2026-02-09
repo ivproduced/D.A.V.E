@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Custom Baseline Builder**: Individual control selection, family-level selection, and predefined scopes
 - **5-Agent AI Architecture**: Evidence Analyzer, Control Mapper, OSCAL Generator, NIST Validator, Remediation Planner
 - **Multi-format Evidence Ingestion**: Support for PDF, DOCX, PNG, JPEG, JSON, YAML, TXT
-- **Multimodal Analysis**: Google Gemini 2.0 processing of text, screenshots, diagrams, and configs
+- **Multimodal Analysis**: Google Gemini 3 Pro Preview processing of text, screenshots, diagrams, and configs
 - **NIST 800-53 Rev 5 Integration**: Full catalog with 1,191 controls across 20 families
 - **Three Processing Modes**: Quick (batch), Smart (selective), Deep (comprehensive)
 - **OSCAL 1.2.0 Generation**: Valid SSP components and POA&M entries
@@ -40,7 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Technical Details
 - **Backend**: FastAPI (Python 3.13+), Google Generative AI SDK
 - **Frontend**: Next.js 16, React 19, TypeScript, Tailwind CSS
-- **AI Model**: Google Gemini 2.0 Flash Experimental
+- **AI Model**: Google Gemini 3 Pro Preview
 - **Database**: PostgreSQL 16, Redis 7
 - **Deployment**: Docker, Cloud Run, Vercel ready
 

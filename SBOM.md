@@ -13,10 +13,10 @@
 
 **Name:** D.A.V.E (Document Analysis & Validation Engine)  
 **Version:** 0.1.0  
-**Description:** Multi-agent compliance automation system using Google Gemini 2.0 Flash Experimental for NIST 800-53 control mapping and OSCAL artifact generation  
+**Description:** Multi-agent compliance automation system using Google Gemini 3 Pro Preview for NIST 800-53 control mapping and OSCAL artifact generation  
 **Repository:** Private  
 **Architecture:** 5-agent system (Evidence Analyzer, Control Mapper, OSCAL Generator, NIST Validator, Remediation Planner)  
-**AI Model:** Google Gemini 2.0 Flash Experimental  
+**AI Model:** Google Gemini 3 Pro Preview  
 **Python Version:** 3.13+  
 **Node.js Version:** 20+
 
@@ -37,7 +37,7 @@
 
 | Component | Version | License | Purpose | Source |
 |-----------|---------|---------|---------|--------|
-| google-generativeai | 0.8.3 | Apache-2.0 | Google Gemini 2.0 Flash Experimental API client | PyPI |
+| google-generativeai | 0.8.3 | Apache-2.0 | Google Gemini 3 Pro Preview API client | PyPI |
 
 ### 2.3 Document Processing
 
@@ -183,7 +183,7 @@
 
 | Service | Purpose | Authentication | Endpoint |
 |---------|---------|----------------|----------|
-| Google Gemini API | AI-powered document analysis using Gemini 2.0 Flash Experimental | API Key | generativelanguage.googleapis.com |
+| Google Gemini API | AI-powered document analysis using Gemini 3 Pro Preview | API Key | generativelanguage.googleapis.com |
 | NIST National Vulnerability Database | NIST 800-53 Rev 5 catalog access | Public | nvd.nist.gov |
 
 ---
