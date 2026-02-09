@@ -1,16 +1,31 @@
-MIT License
+D.A.V.E (Document Analysis & Validation Engine) - Dual License
 
 Copyright (c) 2026 euCann Develop
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+================================================================================
+GOVERNMENT & NON-PROFIT LICENSE (Free)
+================================================================================
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Permission is hereby granted, free of charge, to any government entity, 
+non-profit organization, educational institution, or individual for 
+non-commercial use, to use, copy, modify, and distribute this software 
+and associated documentation files (the "Software"), subject to the 
+following conditions:
+
+1. This license applies only to:
+   - Federal, state, local, tribal, or foreign government agencies
+   - 501(c)(3) non-profit organizations
+   - Accredited educational institutions
+   - Individual researchers/developers for non-commercial purposes
+
+2. The above copyright notice and this permission notice shall be included 
+   in all copies or substantial portions of the Software.
+
+3. Any modifications or derivative works must also be made available under 
+   these same terms.
+
+4. This software may not be used as part of any commercial product or service 
+   without obtaining a separate Commercial License (see below).
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -19,3 +34,44 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+================================================================================
+COMMERCIAL LICENSE (Paid)
+================================================================================
+
+For commercial use, including but not limited to:
+- Integration into commercial products or services
+- Use by for-profit companies or organizations
+- Offering compliance-as-a-service using this software
+- Reselling, licensing, or distributing as part of paid offerings
+
+A separate Commercial License is required.
+
+To obtain a Commercial License, contact:
+- Email: licensing@eucann.life
+- Website: https://eucann.life/dave-licensing
+
+Commercial License benefits:
+- Full rights to use in commercial products
+- Priority support and updates
+- Custom feature development available
+- Service Level Agreement (SLA) options
+- Indemnification protection
+
+Pricing is based on organization size and use case.
+
+================================================================================
+QUESTIONS & CLARIFICATIONS
+================================================================================
+
+**Are you a government agency or non-profit?**
+You may use D.A.V.E freely under the Government & Non-Profit License above.
+
+**Are you a for-profit company?**
+Contact licensing@eucann.life to discuss Commercial License options.
+
+**Not sure which license applies to you?**
+Contact licensing@eucann.life for guidance.
+
+For full license terms and commercial pricing, visit:
+https://eucann.life/dave-licensing

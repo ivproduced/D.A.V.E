@@ -6,6 +6,8 @@ Thank you for your interest in contributing to D.A.V.E (Document Analysis & Vali
 
 By participating in this project, you agree to maintain a respectful, inclusive, and harassment-free environment for everyone.
 
+**Note on Licensing**: D.A.V.E uses a Dual License model. Contributions are made under the same dual license terms. By contributing, you agree that your contributions may be used under both the Government & Non-Profit License (free) and Commercial License (paid). See [LICENSE](LICENSE) for details.
+
 ## How to Contribute
 
 ### Reporting Issues

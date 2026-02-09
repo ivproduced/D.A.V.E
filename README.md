@@ -1,7 +1,8 @@
 # D.A.V.E - Document Analysis & Validation Engine
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](CHANGELOG.md)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-Dual%20License-blue.svg)](LICENSE)
+[![Free for Government](https://img.shields.io/badge/free-government%20%26%20non--profit-green.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.13%2B-blue.svg)](https://www.python.org/downloads/)
 [![Node](https://img.shields.io/badge/node-20%2B-green.svg)](https://nodejs.org/)
 
@@ -140,4 +141,9 @@ D.A.V.E leverages Gemini 2.0's multimodal reasoning to automate compliance workf
 
 ## License
 
-MIT License - see LICENSE file for details.
+**Dual License Model:**
+
+- **Free for Government & Non-Profit**: Government agencies, non-profit organizations, educational institutions, and individual researchers may use D.A.V.E freely.
+- **Commercial License Required**: For-profit companies require a paid Commercial License.
+
+See [LICENSE](LICENSE) for full terms or contact licensing@eucann.life for commercial licensing.

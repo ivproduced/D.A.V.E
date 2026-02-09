@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2026-02-08
 
+### License
+- **Dual License Model**: Free for government/non-profit use, commercial license for for-profit companies
+- Government agencies, non-profits, educational institutions can use freely
+- Commercial License required for for-profit use
+
 ### Added
 - **Custom Baseline Builder**: Individual control selection, family-level selection, and predefined scopes
 - **5-Agent AI Architecture**: Evidence Analyzer, Control Mapper, OSCAL Generator, NIST Validator, Remediation Planner
