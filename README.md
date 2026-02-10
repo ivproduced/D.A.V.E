@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-Dual%20License-blue.svg)](LICENSE)
 [![Free for Government](https://img.shields.io/badge/free-government%20%26%20non--profit-green.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.13%2B-blue.svg)](https://www.python.org/downloads/)
+[![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
 [![Node](https://img.shields.io/badge/node-20%2B-green.svg)](https://nodejs.org/)
 
 🌟 **AI-Powered Compliance Automation using Google Gemini 3 Pro**
@@ -50,7 +50,7 @@ Built with a **5-agent architecture** powered by Google Gemini 3 Pro Preview:
 
 ## Tech Stack
 
-- **Backend**: FastAPI (Python 3.13+), Google Generative AI SDK
+- **Backend**: FastAPI (Python 3.11+), Google Generative AI SDK
 - **Frontend**: Next.js 16, React 19, TypeScript, Tailwind CSS, shadcn/ui
 - **AI Model**: Google Gemini 3 Pro Preview (multimodal reasoning)
 - **Database**: PostgreSQL, Redis, Google Cloud Storage

@@ -38,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CORS configuration
 
 ### Technical Details
-- **Backend**: FastAPI (Python 3.13+), Google Generative AI SDK
+- **Backend**: FastAPI (Python 3.11+), Google Generative AI SDK
 - **Frontend**: Next.js 16, React 19, TypeScript, Tailwind CSS
 - **AI Model**: Google Gemini 3 Pro Preview
 - **Database**: PostgreSQL 16, Redis 7

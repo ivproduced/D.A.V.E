@@ -28,7 +28,7 @@
 
 | Component | Version | License | Purpose | Source |
 |-----------|---------|---------|---------|--------|
-| fastapi | 0.115.6 | MIT | Modern, fast web framework for building APIs with Python 3.13+ | PyPI |
+| fastapi | 0.115.6 | MIT | Modern, fast web framework for building APIs with Python 3.11+ | PyPI |
 | uvicorn[standard] | 0.34.0 | BSD-3-Clause | Lightning-fast ASGI server implementation | PyPI |
 | pydantic | 2.10.6 | MIT | Data validation using Python type annotations | PyPI |
 | pydantic-settings | 2.7.1 | MIT | Settings management using Pydantic | PyPI |
